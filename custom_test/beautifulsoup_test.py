@@ -47,7 +47,7 @@ def beautifulsoup_func():
         hrefs = hrefs + href +"|"
 
     #数据写入到文件/数据库
-    file = open("links.txt", "r+")
+    file = open("links.txt", "w")
     file.write(hrefs)
     file.close()
     hrefs
