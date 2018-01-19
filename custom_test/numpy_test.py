@@ -151,10 +151,106 @@ def sort_func():
     y = np.sort_complex([5, 3, 6, 2, 1])
     print("y",y)
 
-    # numpy.argmax
+    # numpy.argmax 返回沿轴的最大值的索引
     a = np.arange(6).reshape(2,3)
     print("a",a)
     print("np.argmax(a)",np.argmax(a))
+
+    # numpy.argpartition
+    a = np.array([[np.nan, 4], [2, 3]])
+    print("np.nanargmax(a)",np.nanargmax(a))
+
+    a = np.arange(6).reshape(2,3)
+    print("a",a)
+    print("np.argmin(a)",np.argmin(a))
+
+    # 找到非零的数组元素的索引，按元素分组
+    x=np.argwhere(x>1)
+    print("x",x)
+    x=np.where(x>1)
+    print("x",x)
+
+    # 查找要插入元素以维持顺序的索引
+    x=np.searchsorted([1,2,3,4,5], 3)
+    print("x",x)
+
+
+"""
+@desc:统计函数
+@date:2018-01-19
+@author:Walter
+"""
+def static_func():
+    a = np.arange(4).reshape((2,2))
+    print("a",a)
+    # 获取最小值
+    print("np.amin(a)",np.amin(a))
+    # 获取最大值
+    print("np.amax(a)",np.amax(a))
+    # 沿轴的值范围（最大 - 最小）
+    print("np.ptp(a, axis=0)",np.ptp(a, axis=0))
+    # 沿指定轴计算数据的第q个百分位数
+    print("np.percentile(a, 50)",np.percentile(a, 50))
+    # 返回数组元素的中位数。
+    a = np.array([[10, 7, 4], [3, 2, 1]])
+    print("np.median(a)",np.median(a))
+    # 0轴上的中位数
+    print("np.median(a, axis=0)",np.median(a, axis=0))
+    # 1轴上的中位数
+    print("np.median(a, axis=1)",np.median(a, axis=1))
+    # 平均数
+    data = range(1,5)
+    print("data",data)
+    print("np.average(data)",np.average(data))
+    # 算术平均值
+    print("np.mean(data)",np.mean(data))
+    # 计算沿指定轴的标准偏差
+    print("np.std(data)",np.std(data))
+    # 计算沿指定轴的方差
+    print("np.var(data)",np.var(data))
+
+
+"""
+@desc:线性代数
+@date:2018-01-19
+@author:Walter
+"""
+def linalog_func():
+    # 两个数组的点积
+    x=np.dot(3, 4)
+    print("x",x)
+
+    # 2-D数组，它是矩阵积
+    a = [[1, 0], [0, 1]]
+    b = [[4, 1], [2, 2]]
+    x=np.dot(a, b)
+    print("x",x)
+
+    # 向量点积
+    a = np.array([1+2j,3+4j])
+    b = np.array([5+6j,7+8j])
+    x=np.vdot(a, b)
+    print("x",x)
+    x=np.vdot(b, a)
+    print("x",x)
+
+    # 两个数组的内积
+    a = np.array([1,2,3])
+    b = np.array([0,1,0])
+    x=np.inner(a, b)
+    print("x",x)
+
+    # 计算两个向量的外积
+    a = np.array([1+2j,3+4j])
+    b = np.array([5+6j,7+8j])
+    x=np.outer(a, b)
+    print("x",x)
+
+    # 两个数组的矩阵乘积
+    a = [1, -1]
+    b = [1, 2]
+    x=np.matmul(a, b)
+    print("x",x)
 
 #main函数
 if __name__=="__main__":
@@ -162,5 +258,7 @@ if __name__=="__main__":
     # numpy_func()
     # ndarray_func()
     # constructor_array_func()
-    sort_func()
+    # sort_func()
+    # static_func()
+    linalog_func()
     print("结束")
