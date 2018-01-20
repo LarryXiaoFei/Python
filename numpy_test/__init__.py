@@ -33,3 +33,4 @@ print(A)
 print("==矩阵的特征值和特征向量==np.mat('3 -2;1 0')")
 B = np.linalg.eig(A)
 print(B)
+
